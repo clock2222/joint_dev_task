@@ -99,7 +99,9 @@ def q11
 
   # 以下に回答を記載
   puts "ユーザの趣味一覧"
-  sports.flatten.uniq.each.with_index(1) { |sport, index| puts "No#{index} #{sport}" }
+  sports.flatten.uniq.each.with_index(1) { |sport, index| 
+    puts "No#{index} #{sport}" 
+  }
 end
 
 def q12
@@ -145,9 +147,7 @@ def q16
 
   # 以下に回答を記載
   users.each do |user|
-    puts <<~TEXT
-     私の名前は#{user[:name]}です。 年齢は#{user[:age]}歳です。
-    TEXT
+    puts "私の名前は#{user[:name]}です。 年齢は#{user[:age]}歳です。"
   end
 end
 
