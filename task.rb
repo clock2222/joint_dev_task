@@ -221,9 +221,9 @@ end
 class UserQ20
   # 以下に回答を記載
   attr_reader :name, :age
-  def initialize(user)
-    @name = user[:name]
-    @age = user[:age]
+  def initialize(name:'string', age:)
+    @name = name
+    @age = age
   end
 
 end
@@ -232,10 +232,6 @@ class Zoo
   # 以下に回答を記載
   def initialize(name:, entry_fee:)
     @entry_fee = entry_fee
-    # @infant = zoo[:entry_fee][:infant]
-    # @children = zoo[:entry_fee][:children]
-    # @adult = zoo[:entry_fee][:adult]
-    # @senior = zoo[:entry_fee][:senior]
   end
 
   def info_entry_fee(user)
