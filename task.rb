@@ -207,7 +207,7 @@ end
 class Item
   # 以下を修正して下さい
   attr_reader :name
-  def initialize(name:'string')
+  def initialize(name:)
     @name = name
   end
 end
@@ -221,7 +221,7 @@ end
 class UserQ20
   # 以下に回答を記載
   attr_reader :name, :age
-  def initialize(name:'string', age:)
+  def initialize(name:, age:)
     @name = name
     @age = age
   end
@@ -235,16 +235,17 @@ class Zoo
   end
 
   def info_entry_fee(user)
-    case user.age
+    fee = case user.age
       when (0..5)
-        puts "#{user.name}さんの入場料金は#{@entry_fee[:infant]}円です。"
+        @entry_fee[:infant]
       when (6..12)
-        puts "#{user.name}さんの入場料金は#{@entry_fee[:children]}円です。"
+        @entry_fee[:children]
       when (13..64)
-        puts "#{user.name}さんの入場料金は#{@entry_fee[:adult]}円です。"
+        @entry_fee[:adult]
       when (65..120)
-        puts "#{user.name}さんの入場料金は#{@entry_fee[:senior]}円です。"
+        @entry_fee[:senior]
     end
+    puts "#{user.name}さんの入場料金は#{fee}円です。"
   end
 end
 
